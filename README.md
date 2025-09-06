@@ -20,6 +20,9 @@ The following columns are in the output data, all power numbers are in megawatts
 
 **NOTE**: For wind farms with output split between Transmission Authorities, only the portion sent to BPA is reported.
 
+## Installation
+This tool is distributed through PyPi and can be installed using `pip install bpa_fetch`
+
 ## Usage
 
 `python bpa_fetch.py [DATES ...] -r -o file.format -f format`

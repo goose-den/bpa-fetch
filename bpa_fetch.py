@@ -218,7 +218,7 @@ def pull_years(years: list = None, working_dir: Path = _DEFAULT_OUT_DIR) -> Data
     return all_years
 
 def _save_to_parquet(dataframe: DataFrame, out_file: Path) -> int:
-    years = dataframe["year"].unique()
+    # years = dataframe["year"].unique()
     a = Table.from_pandas(dataframe, preserve_index=False)
 
     writer = ParquetWriter(
