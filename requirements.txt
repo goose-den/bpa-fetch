@@ -1,0 +1,9 @@
+openpyxl
+urllib3
+beautifulsoup4
+requests
+pandas
+openpyxl
+numpy
+pyarrow
+xlrd

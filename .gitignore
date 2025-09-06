@@ -1,0 +1,6 @@
+bpa_data/
+
+dist/
+bpa_fetch.egg-info/
+
+uv.lock

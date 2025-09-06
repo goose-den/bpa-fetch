@@ -1,0 +1,31 @@
+[project]
+name = "bpa-fetch"
+dynamic=["version"]
+description = "Add your description here"
+readme = "README.md"
+
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4",
+    "pandas",
+    "openpyxl",
+    "requests",
+    "urllib3",
+    "numpy",
+    "pyarrow",
+    "xlrd",
+]
+
+scripts = {bpa-fetch = "bpa_fetch:cli"}
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["bpa_fetch"]
+
+[tool.setuptools.dynamic]
+version = {attr = "bpa_fetch.__version__"}
+
