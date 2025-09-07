@@ -24,8 +24,9 @@ The following columns are in the output data, all power numbers are in megawatts
 This tool is distributed through PyPi and can be installed using `pip install bpa_fetch`
 
 ## Usage
-
-`python bpa_fetch.py [DATES ...] -r -o file.format -f format`
+`bpa-fetch [DATES ...] -r -o file.format -f format`
+<br>This is meant to be a primarily command line tool, and provides the command `bpa-fetch` for users when installed.
+<br>It is also possible to execute directly with python by calling `python -m bpa_fetch` which takes the same arguments as described below.
 
 The follow arguments are available:
 - `DATES` : A list of space seperated years to pull (ig: `2010 2013 2020`). If no dates are provided, all years will be pulled.
@@ -33,17 +34,16 @@ The follow arguments are available:
 - `--range -r`: If this flag is used, two years will be expected for `DATES` and all years between `DATE 1` and `DATE 2` will be pulled (inclusive).
 - `--format -f`: The format of the saved data, options are `Parquet`<sup>1</sup> and `Pandas`. When using pandas, the default file extension is `.pkl.gz` unless set using `-o`. Defaults to `PARQUET`
 
-If the package is installed with pip, the script `bpa-fetch` is available with the same arguments and `python bpa_fetch.py`
 <br><sup>1</sup> - [Parquet](https://parquet.apache.org/docs/overview/) is a file format developed by the Apache Software Foundation for data analysis workloads and provides small file sizes and fast, efficient queries. To view and work with Parquet, tools like [Tad](https://www.tadviewer.com/) and [DuckDB](https://duckdb.org/) can be used.
 
 ### Examples
-- To pull all years and save as the default filename and format: `python bpa_fetch.py`
-- To pull all years between 2010 & 2016 and save as pandas to the default filename: `python bpa_fetch.py 2010 2016 -r -f pandas`
-- To pull years 2012, 2015, and 2016 and save as a parquet to `output/year-data.parquet`: `python bpa_fetch.py 2012 2015 2016 -o "output/year-data.parquet"`
-- To pull only 2017: `python bpa_fetch.py 2017`
+- To pull all years and save as the default filename and format: `bpa-fetch`
+- To pull all years between 2010 & 2016 and save as pandas to the default filename: `bpa-fetch 2010 2016 -r -f pandas`
+- To pull years 2012, 2015, and 2016 and save as a parquet to `output/year-data.parquet`: `bpa-fetch 2012 2015 2016 -o "output/year-data.parquet"`
+- To pull only 2017: `bpa-fetch 2017`
 
 
-## User Functions
+### User Functions
 The function `bpa_fetch.pull_years` is also available and returns a pandas Dataframe of the pulled data.
 It takes two arguments:
 - `years` is a list of years (as `ints`) to pull, if `None` than all years will be pulled.

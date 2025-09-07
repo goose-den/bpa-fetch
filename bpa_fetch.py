@@ -10,7 +10,7 @@ from pyarrow.parquet import ParquetWriter
 from numpy import isnan
 from pathlib import Path
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 # Contains a directory of BPA historical power generation data
